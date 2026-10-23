@@ -306,40 +306,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Historical Milestones */}
-      <section className="py-16 md:py-20 bg-slate-50 w-full border-t border-slate-200/80">
-        <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-28">
-          <div className="max-w-3xl mx-auto text-center mb-14 space-y-2">
-            <span className="text-xs sm:text-sm font-black tracking-wider text-brand-red uppercase">
-              {milestones.eyebrow}
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
-              {milestones.title}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {milestones.items.map((item, index) => (
-              <div
-                key={`${item.year}-${index}`}
-                className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm relative space-y-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-black text-brand-red">{item.year}</span>
-                  <span className="text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-0.5 rounded-full">
-                    Step {index + 1}
-                  </span>
-                </div>
-                <h4 className="text-base font-bold text-slate-900">{item.title}</h4>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action Banner */}
       <section className="bg-brand-red text-white py-14 sm:py-16 w-full">
         <div className="w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-28">

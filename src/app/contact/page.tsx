@@ -136,6 +136,32 @@ export default function ContactPage() {
         duration: 5000,
       });
 
+      // Direct notification link to Owner WhatsApp
+      try {
+        const ownerWaNumber = "966572995987";
+        const waMsg = [
+          "*New B2B Quotation Request (ABCO Food Supply)*",
+          `*Reference:* #${data.data?.id || "AFS-RFQ"}`,
+          `*Client Name:* ${formData.name}`,
+          `*Company:* ${formData.company}`,
+          formData.crNumber ? `*CR Number:* ${formData.crNumber}` : "",
+          `*Mobile / WhatsApp:* ${formData.phone}`,
+          `*Email:* ${formData.email}`,
+          `*City:* ${formData.city}`,
+          `*Business Sector:* ${formData.businessType}`,
+          `*Categories Required:* ${selectedCategories.join(", ")}`,
+          `*Expected Volume:* ${formData.volume}`,
+          formData.message ? `*Notes / Specifications:* ${formData.message}` : "",
+        ].filter(Boolean).join("\n");
+
+        const waUrl = `https://wa.me/${ownerWaNumber}?text=${encodeURIComponent(waMsg)}`;
+        if (typeof window !== "undefined") {
+          window.open(waUrl, "_blank");
+        }
+      } catch (err) {
+        console.warn("WhatsApp redirect error:", err);
+      }
+
       setFormData({
         name: "",
         email: "",

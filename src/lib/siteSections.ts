@@ -311,8 +311,8 @@ export const SECTION_DEFAULTS: SiteSections = {
     buttonText: "View Full Gallery",
   },
   contact: {
-    phone: "+966 50 699 2667",
-    phone2: "+966 57 299 5987",
+    phone: "+966 57 299 5987",
+    phone2: "+966 50 699 2667",
     whatsapp: "966572995987",
     email: "info@abcofoodsupply.com",
     email2: "bdm@abcofoodsupply.com",
