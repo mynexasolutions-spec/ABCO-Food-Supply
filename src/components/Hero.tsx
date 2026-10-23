@@ -174,15 +174,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenEnquiry, onSelectCategory }) =
         {/* Desktop / Tablet Background Image */}
         <div className="hidden md:block absolute inset-0 z-0">
           {heroReady && (
-            <Image
-              key={cmsData.hero.heroImage}
-              src={cmsData.hero.heroImage || "/categories/hero.png"}
-              alt="ABCO Food Supply Supermarket Distribution"
-              fill
-              priority
-              className="object-cover object-right lg:object-[85%_center]"
-              sizes="100vw"
-            />
+            <>
+              <Image
+                key={cmsData.hero.heroImage}
+                src={cmsData.hero.heroImage || "/categories/hero.png"}
+                alt="ABCO Food Supply Supermarket Distribution"
+                fill
+                priority
+                className="object-cover object-right lg:object-[85%_center]"
+                sizes="100vw"
+              />
+              {/* High-contrast smooth backdrop to make headline and subtitle 100% readable while maintaining photo depth */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent to-60% pointer-events-none" />
+            </>
           )}
         </div>
 
